@@ -44,16 +44,12 @@ cd LiveCodeBench
 # venv + зависимости
 нужно поставить uv!
 
-On macOS and Linux.
-
-```
+#On macOS and Linux.
 curl -LsSf https://astral.sh/uv/install.sh | sh
-```
 
-On Windows.
-```
+#On Windows.
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-```
+
 
 uv venv --python 3.11
 source .venv/bin/activate
