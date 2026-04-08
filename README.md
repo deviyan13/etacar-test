@@ -44,14 +44,14 @@ cd LiveCodeBench
 # venv + зависимости
 нужно поставить uv!
 
+On macOS and Linux.
+
 ```
-# On macOS and Linux.
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-
+On Windows.
 ```
-# On Windows.
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
@@ -145,25 +145,25 @@ python run\_promptpulse.py --mode agent2 --n\_samples 846
 
 python -m lcb\_runner.runner.custom\_evaluator \\
 
-&#x20; --custom\_output\_file output/promptpulse\_base\_outputs.json \\
+ --custom\_output\_file output/promptpulse\_base\_outputs.json \\
 
-&#x20; --scenario codegeneration
-
-
-
-python -m lcb\_runner.runner.custom\_evaluator \\
-
-&#x20; --custom\_output\_file output/promptpulse\_agent1\_outputs.json \\
-
-&#x20; --scenario codegeneration
+ --scenario codegeneration
 
 
 
 python -m lcb\_runner.runner.custom\_evaluator \\
 
-&#x20; --custom\_output\_file output/promptpulse\_agent2\_outputs.json \\
+ --custom\_output\_file output/promptpulse\_agent1\_outputs.json \\
 
-&#x20; --scenario codegeneration
+ --scenario codegeneration
+
+
+
+python -m lcb\_runner.runner.custom\_evaluator \\
+
+ --custom\_output\_file output/promptpulse\_agent2\_outputs.json \\
+
+ --scenario codegeneration
 
 ```
 
