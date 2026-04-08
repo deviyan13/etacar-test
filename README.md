@@ -42,16 +42,27 @@ cd LiveCodeBench
 
 
 # venv + зависимости
+нужно поставить uv!
 
-python -m venv .venv
+```
+# On macOS and Linux.
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
 
+
+```
+# On Windows.
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+uv venv --python 3.11
 source .venv/bin/activate
 
+uv pip install -e .
 
 
 uv pip install "datasets==2.20.0"
 
-uv pip install -e .
 
 uv pip install requests tqdm
 
