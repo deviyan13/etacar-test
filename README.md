@@ -1,4 +1,4 @@
-\# LiveCodeBench integration
+# LiveCodeBench integration
 
 
 
@@ -25,11 +25,11 @@ MODEL\_ID = "openai:gpt-5.4"
 
 
 
-\## Запуск бенчмарка
+## Запуск бенчмарка
 
 
 
-\### 1. Установка LiveCodeBench
+### 1. Установка LiveCodeBench
 
 
 
@@ -41,7 +41,7 @@ cd LiveCodeBench
 
 
 
-\# venv + зависимости
+# venv + зависимости
 
 python -m venv .venv
 
@@ -63,7 +63,7 @@ uv pip install requests tqdm
 
 
 
-\### 2. Генерация ответов модели
+### 2. Генерация ответов модели
 
 
 
@@ -71,11 +71,11 @@ uv pip install requests tqdm
 
 
 
-\- `base` — базовая модель без агента
+- `base` — базовая модель без агента
 
-\- `agent1` — модель под первым доступным супер-агентом (`aiSuperAgents\[0]`)
+- `agent1` — модель под первым доступным супер-агентом (`aiSuperAgents\[0]`)
 
-\- `agent2` — модель под вторым супер-агентом (`aiSuperAgents\[1]`)
+- `agent2` — модель под вторым супер-агентом (`aiSuperAgents\[1]`)
 
 
 
@@ -85,19 +85,19 @@ uv pip install requests tqdm
 
 ```bash
 
-\# Базовая модель
+# Базовая модель
 
 python run\_promptpulse.py --mode base --n\_samples 846
 
 
 
-\# Модель под первым агентом
+# Модель под первым агентом
 
 python run\_promptpulse.py --mode agent1 --n\_samples 846
 
 
 
-\# Модель под вторым агентом
+# Модель под вторым агентом
 
 python run\_promptpulse.py --mode agent2 --n\_samples 846
 
@@ -113,39 +113,16 @@ python run\_promptpulse.py --mode agent2 --n\_samples 846
 
 
 
-\- `output/promptpulse\_base\_outputs.json`
+- `output/promptpulse\_base\_outputs.json`
 
-\- `output/promptpulse\_agent1\_outputs.json`
+- `output/promptpulse\_agent1\_outputs.json`
 
-\- `output/promptpulse\_agent2\_outputs.json`
-
-
-
-Формат:
+- `output/promptpulse\_agent2\_outputs.json`
 
 
 
-```json
 
-\[
-
-&#x20; {
-
-&#x20;   "question\_id": "xxx",
-
-&#x20;   "code\_list": \["... сгенерированный код ..."]
-
-&#x20; },
-
-&#x20; ...
-
-]
-
-```
-
-
-
-\### 3. Оценка результатов через LiveCodeBench
+### 3. Оценка результатов через LiveCodeBench
 
 
 
@@ -185,11 +162,11 @@ python -m lcb\_runner.runner.custom\_evaluator \\
 
 
 
-\- загружает тот же датасет LiveCodeBench (`code\_generation\_lite`, release\_v5),
+- загружает тот же датасет LiveCodeBench (`code\_generation\_lite`, release\_v5),
 
-\- выравнивает результаты по `question\_id`,
+- выравнивает результаты по `question\_id`,
 
-\- компилирует и запускает код на тестах,
+- компилирует и запускает код на тестах,
 
-\- считает метрики по бенчу и сохраняет их в `\*\_eval.json`.
+- считает метрики по бенчу и сохраняет их в `\*\_eval.json`.
 
